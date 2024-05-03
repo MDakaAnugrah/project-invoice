@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ONEBOX ERP | Courier</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/fixedheader/3.3.2/css/fixedHeader.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style/style.css" />
+
+    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/fixedheader/3.3.2/css/fixedHeader.dataTables.min.css" rel="stylesheet" />
+
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.3.2/js/dataTables.fixedHeader.min.js"></script>
+
+      <style>
+    .panel-primary {
+      position: absolute;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function() {
+      $("#btnFilter").click(function() {
+        $(".panel-primary").toggle();
+      });
+    });
+  </script>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold">David Williams</span>
+                        <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                        <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            
+            <li>
+              <a href="index.html"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Sales</span><span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li><a href="./index.html">Sales List</a></li>
+                <li class=""><a href="./pencatatan-penjualan.html">Sales Records</a></li>
+                <li><a href="./daftar-piutang.html">Accounts Receivable List</a></li>
+              </ul>
+            </li>
+          <li>
+            <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Delivery Man</span> <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level collapse in">
+                <li class="active"><a href="salesman.html">Courier</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Product & Product Category</span> <span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse">
+              <li class=""><a href="produk&grup.html">Product</a></li>
+              <li class=""><a href="kategoriproduk.html">Product Category</a></li>
+          </ul>
+      </li>
+        </ul>
+      </nav>
+
+      <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+          <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="nav navbar-top-links navbar-right">
+              <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+            </div>
+            <ul class="nav nav-underline">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Sales</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="./salesman.html">Delivery Man</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./produk&grup.html">Product & Product Category</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-top-links navbar-right">
+              <li class="dropdown">
+                <ul class="dropdown-menu dropdown-messages dropdown-menu-right">
+                  <li>
+                    <div class="dropdown-messages-box">
+                      <a class="dropdown-item float-left" href="profile.html">
+                        <img alt="image" class="rounded-circle" src="img/a7.jpg" />
+                      </a>
+                      <div class="media-body">
+                        <small class="float-right">46h ago</small>
+                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br />
+                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <div class="dropdown-messages-box">
+                      <a class="dropdown-item float-left" href="profile.html">
+                        <img alt="image" class="rounded-circle" src="img/a4.jpg" />
+                      </a>
+                      <div class="media-body">
+                        <small class="float-right text-navy">5h ago</small>
+                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br />
+                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <div class="dropdown-messages-box">
+                      <a class="dropdown-item float-left" href="profile.html">
+                        <img alt="image" class="rounded-circle" src="img/profile.jpg" />
+                      </a>
+                      <div class="media-body">
+                        <small class="float-right">23h ago</small>
+                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br />
+                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <div class="text-center link-block">
+                      <a href="mailbox.html" class="dropdown-item"> <i class="fa fa-envelope"></i> <strong>Read All Messages</strong> </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#"> <i class="fa fa-bell"></i> <span class="label label-primary">8</span> </a>
+                <ul class="dropdown-menu dropdown-alerts">
+                  <li>
+                    <a href="mailbox.html" class="dropdown-item">
+                      <div>
+                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                        <span class="float-right text-muted small">4 minutes ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <a href="profile.html" class="dropdown-item">
+                      <div>
+                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                        <span class="float-right text-muted small">12 minutes ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <a href="grid_options.html" class="dropdown-item">
+                      <div>
+                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                        <span class="float-right text-muted small">4 minutes ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <div class="text-center link-block">
+                      <a href="notifications.html" class="dropdown-item">
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="login.html"> <i class="fa fa-sign-out"></i> Log out </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+          <div class="col-lg-8">
+            <h2>Delivery Man</h2>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="breadcrumb-item">Delivery Man</li>
+              <li class="breadcrumb-item active">
+                <strong>Sales Person</strong>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="ibox">
+                <div class="ibox-title">
+                  <!-- Button trigger modal -->
+                  <div class="ibox-tools">
+                    <a class="collapse-link">
+                      <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                      <li><a href="#" class="dropdown-item">Config option 1</a></li>
+                      <li><a href="#" class="dropdown-item">Config option 2</a></li>
+                    </ul>
+                    <a class="close-link">
+                      <i class="fa fa-times"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="d-flex justify-content-between mx-3 mb-3">
+                      <div class="d-flex">
+                        <h4 class="mr-3">All Courier</h4>
+                      </div>
+                      <div>
+                        
+                            <button data-toggle="modal" data-target="#myModal6" href="myModal6" class="btn btn-primary btn-rounded" style="height:100%;" id="btnsales">
+                                <i class="fa fa-plus-circle mr-2 fa-1x"></i><a>Create New Courier</a>
+                            </button>
+                        
+                      </div>
+                    </div>
+                    <div class="table-responsive-lg">
+                      <div id="selectedOptionsContainer">
+                        
+                      </div>
+                      <table class="table table-light center" id="example">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="gradeX">
+                            <td>1</td>
+                            <td>Test1</td>
+                            <td><a data-toggle="modal" data-target="#myModal" >test1</a></td>
+                            <td>
+                              <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-circle dropdown-toggle"></button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="gradeC">
+                            <td>2</td>
+                            <td>Test2</td>
+                            <td>test2</td>
+                            <td>
+                              <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-circle dropdown-toggle"></button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="gradeC">
+                            <td>3</td>
+                            <td>qwerty</td>
+                            <td>abcdef</td>
+                            <td>
+                              <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-circle dropdown-toggle"></button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="gradeC">
+                            <td>4</td>
+                            <td>Daka</td>
+                            <td>anugrah</td>
+                            <td>
+                              <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-circle dropdown-toggle"></button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                           
+                          </tr>
+                          <tr class="gradeC">
+                            <td>5</td>
+                            <td>James</td>
+                            <td>holand</td>
+                            <td>
+                              <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-circle dropdown-toggle"></button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New Courier</h5>
+                      </div>
+                    <div class="modal-body">
+                        <div class="row">
+                        <div class="col mb-3">
+                            <label for="nameBasic" class="form-label">Name</label>
+                            <input type="text" id="nameBasic" class="form-control" placeholder="Input Name">
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="nameBasic" class="form-label">Username</label>
+                                <input type="text" id="nameBasic" class="form-control" placeholder="Input Username">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/plugins/dataTables/datatables.min.js"></script>
+    <script src="js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+
+    <script>
+      $(document).ready(function () {
+      var table = $("#example").DataTable({
+        orderCellsTop: true,
+        fixedHeader: true,
+        searching: true, // Disable search field
+        lengthChange: true, // Disable "Show entries" select
+        initComplete: function () {
+          var api = this.api();
+          api.columns().eq(0).each(function (colIdx) {
+            var cell = $(".filters th").eq($(api.column(colIdx).header()).index());
+            var title = $(cell).text();
+            $(cell).html('<input type="text" placeholder="' + title + '" />');
+            $("input", $(".filters th").eq($(api.column(colIdx).header()).index()))
+              .off("keyup change")
+              .on("keyup change", function (e) {
+                e.stopPropagation();
+                $(this).attr("title", $(this).val());
+                var regexr = "({search})";
+                var cursorPosition = this.selectionStart;
+                api.column(colIdx).search(this.value != "" ? regexr.replace("{search}", "(((" + this.value + ")))") : "", this.value != "", this.value == "").draw();
+                $(this).focus()[0].setSelectionRange(cursorPosition, cursorPosition);
+              });
+          });
+        },
+      });
+    // Get all the select elements
+const selectElements = document.querySelectorAll('select');
+
+// Function to handle the click event on the remove button
+function handleRemoveButtonClick(event) {
+  const selectedOptionElement = event.target.parentElement;
+  selectedOptionElement.remove();
+}
+
+// Listen for change events on the select elements
+selectElements.forEach((select) => {
+  select.addEventListener('change', (event) => {
+    const selectedOption = event.target.value;
+    const selectedLabel = event.target.previousElementSibling.textContent;
+    
+    if (selectedOption !== 'Choose...') {
+      // Create the HTML for the selected option
+      const selectedOptionHTML = `
+        <h5 class="label label-secondary inline ml-2 fade-in mb-4">${selectedLabel}: ${selectedOption}
+          <a class="remove-btn ml-2">X</a>
+        </h5>
+      `;
+      
+      // Append the selected option HTML to the container
+      const container = document.getElementById('selectedOptionsContainer');
+      container.innerHTML += selectedOptionHTML;
+      
+      // Get the remove buttons
+      const removeButtons = document.querySelectorAll('.remove-btn');
+      
+      // Attach click event listener to each remove button
+      removeButtons.forEach((button) => {
+        button.addEventListener('click', handleRemoveButtonClick);
+      });
+    }
+  });
+});
+
+
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.active {
+  color: black;
+  font-weight: bolder;
+}
+
+input::placeholder {
+  font-size: 9px; /* Adjust the font size value as needed */
+}
+
+thead input {
+  width: 100%;
+}
+
+/* CSS to remove the dropdown arrow-down icon */
+.no-arrow::after {
+  display: none !important;
+}
